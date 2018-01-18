@@ -10,6 +10,7 @@
 #include <QTranslator>
 #include "core/core.h"
 #include "core/hle/service/am/am.h"
+#include "core/frontend/emu_window.h"
 #include "ui_main.h"
 
 class AboutDialog;
@@ -31,6 +32,7 @@ class QFutureWatcher;
 class QProgressBar;
 class RegistersWidget;
 class Updater;
+class StereoscopicControllerWidget;
 class WaitTreeWidget;
 
 class GMainWindow : public QMainWindow {
@@ -154,6 +156,8 @@ private slots:
     void OnUpdateFound(bool found, bool error);
     void OnCheckForUpdates();
     void OnOpenUpdater();
+    void OnDepthChanged(float v);
+    void OnStereoscopeModeChanged(EmuWindow::StereoscopicMode);
     void OnLanguageChanged(const QString& locale);
 
 private:
@@ -182,6 +186,7 @@ private:
     std::unique_ptr<EmuThread> emu_thread;
 
     // Debugger panes
+    StereoscopicControllerWidget* stereoscopicControllerWidget;
     ProfilerWidget* profilerWidget;
     MicroProfileDialog* microProfileDialog;
     RegistersWidget* registersWidget;
