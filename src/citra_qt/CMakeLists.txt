@@ -8,7 +8,9 @@ add_executable(citra-qt
     aboutdialog.cpp
     aboutdialog.h
     bootmanager.cpp
+    cheat_gui.cpp
     bootmanager.h
+    cheat_gui.h
     citra-qt.rc
     configuration/config.cpp
     configuration/config.h
@@ -78,6 +80,7 @@ set(UIS
     configuration/configure_web.ui
     debugger/registers.ui
     aboutdialog.ui
+    cheat_gui.ui
     hotkeys.ui
     main.ui
 )
